@@ -42,7 +42,7 @@ angular.module('floyds.services', [])
         "answer": "Red cabbage",
         "category": "v"
       }, {
-        "title": "What name do we give to milk in which natural backteria have fermented the lactose?",
+        "title": "What name do we give to milk in which natural bacteria have fermented the lactose?",
         "answer": "Yoghurt",
         "category": "sd"
       }, {

@@ -56,8 +56,4 @@ angular.module('floyds', ['ionic', 'ionic.contrib.ui.cards', 'floyds.controllers
       });
     }
   }
-})
-
-;
-
-
+});

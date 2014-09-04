@@ -3,7 +3,7 @@
   <swipe-cards>
     <swipe-card ng-repeat="question in questions" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)" class="{{question.category}}">
 
-      <div class="flip-container" onclick="this.classList.toggle('hover');">
+      <div class="flip-container" ng-class="{'hover': showAnswer}" ng-click="showAnswer = !showAnswer">
         <div class="flipper">
           <div class="front">
             <div class="content">{{ question.title }}</div>

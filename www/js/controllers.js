@@ -12,6 +12,8 @@ angular.module('floyds.controllers', [])
   $scope.questions = [];
   addQuestion();
 
+  $scope.hover = "";
+
   $scope.cardDestroyed = function(index) {
     $scope.questions.splice(index, 1);
   };
