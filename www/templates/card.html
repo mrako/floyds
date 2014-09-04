@@ -1,0 +1,19 @@
+<ion-pane ng-controller="CardsCtrl">
+  <ion-header-bar type="bar-transparent" title="'Help out'"></ion-header-bar>
+  <swipe-cards>
+    <swipe-card ng-repeat="question in questions" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)" class="{{question.category}}">
+
+      <div class="flip-container" onclick="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <div class="content">{{ question.title }}</div>
+          </div>
+          <div class="back">
+            <div class="content">{{ question.answer }}</div>
+          </div>
+        </div>
+      </div>
+    </swipe-card>
+  </swipe-cards>
+
+</ion-pane>
