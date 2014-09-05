@@ -1,6 +1,7 @@
 angular.module('floyds.services', [])
   .factory('Cards', function($localstorage) {
-    var cards = $localstorage.getObject('cards');
+    var cards = seedCards();
+    //$localstorage.getObject('cards');
     var currentCard = null;
 
     return {
@@ -11,7 +12,7 @@ angular.module('floyds.services', [])
         if (currentCard != null) {
           cards.splice(currentCard, 1);
         }
-        
+
         currentCard = Math.floor(Math.random() * cards.length);
         return cards[currentCard];
       },
