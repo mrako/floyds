@@ -4,12 +4,16 @@ angular.module('floyds.controllers', [])
 
   $scope.currentCard = Cards.random();
   $scope.questions = [];
+  $scope.finished = false;
 
   var newCard = function() {
     $scope.currentCard = Cards.random();
+    if ($scope.currentCard == null) {
+      $scope.finished = true;
+    }
   }
 
-  var newQuestion = function() {
+  var addQuestion = function() {
     if ($scope.currentCard.questions.length == 0) {
       newCard();
     }
@@ -17,10 +21,7 @@ angular.module('floyds.controllers', [])
     // var index = Math.floor(Math.random() * $scope.currentCard.questions.length);
     $scope.questions.push($scope.currentCard.questions[0]);
     $scope.currentCard.questions.splice(0, 1);
-  }
 
-  var addQuestion = function() {
-    newQuestion();
     $scope.totalCards += 1;
   }
 
@@ -29,7 +30,7 @@ angular.module('floyds.controllers', [])
 
   $scope.hover = "";
 
-  newQuestion();
+  addQuestion();
 
   $scope.cardDestroyed = function(index) {
     $scope.questions.splice(index, 1);

@@ -7664,6 +7664,14 @@ a.button {
 .bar .title {
   color: #eee; }
 
+.finished {
+  position: fixed;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  top: 50%; }
+  .finished h1 {
+    color: #BDC3C7; }
+
 .swipe-cards {
   position: fixed; }
 
@@ -7758,7 +7766,7 @@ a.button {
 
 .button {
   font-weight: bold !important;
-  color: white !important; }
+  color: #BDC3C7 !important; }
 
 .green {
   color: #27AE60 !important; }

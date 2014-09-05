@@ -1,9 +1,14 @@
 <ion-pane>
   <ion-footer-bar class="bar-transparent">
-    <button class="button button-clear">{{ totalCards }} total</button>
+    <button class="button button-clear" ng-show="!finished"><ng-pluralize count="totalCards" when="{'0': 'no cards', '1': '1 card', 'other': '{} cards'}" /></button>
     <h1 class="title"></h1>
-    <button class="button button-clear green">{{ correctCards }} correct</button>
+    <button class="button button-clear green" ng-show="!finished">{{ correctCards }} correct</button>
   </ion-footer-bar>
+
+  <div class="finished" ng-show="finished">
+    <h1><span class="green">{{ correctCards }}</span> / {{ totalCards }}</h1>
+  </div>
+
   <swipe-cards>
     <swipe-card ng-repeat="question in questions" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)" class="{{question.category}}">
 
@@ -31,5 +36,4 @@
       </div>
     </swipe-card>
   </swipe-cards>
-
 </ion-pane>
