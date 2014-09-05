@@ -18,4 +18,4 @@
     git remote add heroku git@heroku.com:floyds.git
     git push heroku master
 
-    
+    heroku ps:scale web=1

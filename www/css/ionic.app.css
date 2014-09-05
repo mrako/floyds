@@ -7752,13 +7752,16 @@ a.button {
 
 .icon {
   font-size: 25px;
-  margin: 5px;
+  padding: 15px 20px;
   color: white;
   display: block; }
 
 .button {
   font-weight: bold !important;
   color: white !important; }
+
+.green {
+  color: #27AE60 !important; }
 
 .front, .back {
   -webkit-backface-visibility: hidden;

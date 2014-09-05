@@ -1,9 +1,9 @@
 <ion-pane>
-  <ion-header-bar class="bar-transparent">
-    <button class="button button-clear">{{ totalCards }}</button>
+  <ion-footer-bar class="bar-transparent">
+    <button class="button button-clear">{{ totalCards }} total</button>
     <h1 class="title"></h1>
-    <button class="button button-clear">{{ correctCards }}</button>
-  </ion-header-bar>
+    <button class="button button-clear green">{{ correctCards }} correct</button>
+  </ion-footer-bar>
   <swipe-cards>
     <swipe-card ng-repeat="question in questions" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)" class="{{question.category}}">
 
