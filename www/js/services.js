@@ -1,15 +1,19 @@
 angular.module('floyds.services', [])
   .factory('Cards', function($localstorage) {
+    var cards = $localstorage.getObject('cards');
+    var currentCard = null;
+
     return {
       all: function() {
         return $localstorage.getObject('cards');
       },
       random: function() {
-        console.log($localstorage.getObject('cards'));
-
-        var cards = $localstorage.getObject('cards');
-        var card_id = Math.floor(Math.random() * cards.length);
-        return cards[card_id];
+        if (currentCard != null) {
+          cards.splice(currentCard, 1);
+        }
+        
+        currentCard = Math.floor(Math.random() * cards.length);
+        return cards[currentCard];
       },
       get: function(id) {
         return $localstorage.getObject('cards')[id];

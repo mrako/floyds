@@ -27,7 +27,6 @@ angular.module('floyds.controllers', [])
   $rootScope.correctCards = 0;
   $scope.totalCards = 0;
 
-
   $scope.hover = "";
 
   newQuestion();
