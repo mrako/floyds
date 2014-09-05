@@ -1,15 +1,31 @@
-<ion-pane ng-controller="CardsCtrl">
-  <ion-header-bar type="bar-transparent" title="'Help out'"></ion-header-bar>
+<ion-pane>
+  <ion-header-bar class="bar-transparent">
+    <button class="button button-clear">{{ totalCards }}</button>
+    <h1 class="title"></h1>
+    <button class="button button-clear">{{ correctCards }}</button>
+  </ion-header-bar>
   <swipe-cards>
     <swipe-card ng-repeat="question in questions" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)" class="{{question.category}}">
 
-      <div class="flip-container" ng-class="{'hover': showAnswer}" ng-click="showAnswer = !showAnswer">
+      <div class="flip-container" ng-controller="CardCtrl" ng-class="{'hover': showAnswer}" ng-click="showAnswer = !showAnswer">
         <div class="flipper">
           <div class="front">
-            <div class="content">{{ question.title }}</div>
+            <div class="left-top">{{ currentCard.id }}</div>
+            <div class="right-top">{{ question.category | uppercase }}</div>
+            <div class="content">
+              {{ question.title }}
+            </div>
           </div>
           <div class="back">
-            <div class="content">{{ question.answer }}</div>
+            <div class="content">
+              {{ question.answer }}
+            </div>
+            <div class="left-bottom">
+              <a class="icon ion-close-round" ng-click="incorrect()"></a>
+            </div>
+            <div class="right-bottom">
+              <a class="icon ion-checkmark-round" ng-click="correct()"></a>
+            </div>
           </div>
         </div>
       </div>
